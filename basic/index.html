@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>基础操作 - 泰拉瑞亚新手教程</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Comic Sans MS', 'Microsoft YaHei', sans-serif;
+        }
+        body {
+            background: #1a1a2e;
+            color: #fff;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+            border-bottom: 2px solid #00ffff;
+            padding-bottom: 20px;
+        }
+        .back-btn {
+            background: #3498db;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            margin-right: 30px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        .back-btn:hover {
+            background: #2980b9;
+            transform: scale(1.05);
+        }
+        h1 {
+            font-size: 2.5em;
+            color: #00ffff;
+            text-shadow: 0 0 10px #00ffff;
+        }
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+        .image-section {
+            flex: 1;
+            min-width: 300px;
+        }
+        .image-section img {
+            width: 100%;
+            border-radius: 15px;
+            border: 3px solid #00ffff;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        }
+        .text-section {
+            flex: 1;
+            min-width: 300px;
+        }
+        .control-group {
+            margin-bottom: 30px;
+            background: rgba(34, 49, 63, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 5px solid #00ffff;
+        }
+        h2 {
+            font-size: 1.8em;
+            color: #ffd700;
+            margin-bottom: 15px;
+        }
+        .control-list {
+            list-style-type: none;
+        }
+        .control-list li {
+            font-size: 1.1em;
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+        .control-list li:before {
+            content: "✦";
+            color: #00ffff;
+            position: absolute;
+            left: 0;
+        }
+        .tips {
+            background: linear-gradient(135deg, #e74c3c, #f39c12);
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        .tips h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+        .tips p {
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="../index.html" class="back-btn">← 返回主页</a>
+            <h1>基础操作指南</h1>
+        </div>
+
+        <div class="content">
+            <div class="image-section">
+                <img src="../images/basic-controls.jpg" alt="泰拉瑞亚基础操作界面">
+            </div>
+
+            <div class="text-section">
+                <div class="control-group">
+                    <h2>移动与视角控制</h2>
+                    <ul class="control-list">
+                        <li><strong>W/A/S/D</strong>：上下左右移动角色</li>
+                        <li><strong>空格</strong>：跳跃（连续按可二段跳，需装备翅膀后解锁）</li>
+                        <li><strong>鼠标拖动</strong>：控制视角旋转</li>
+                        <li><strong>鼠标滚轮</strong>：缩放视角</li>
+                        <li><strong>左Shift</strong>：潜行（缓慢移动，避免掉落）</li>
+                    </ul>
+                </div>
+
+                <div class="control-group">
+                    <h2>挖掘与建造</h2>
+                    <ul class="control-list">
+                        <li><strong>鼠标左键</strong>：使用当前装备（挖掘、攻击）</li>
+                        <li><strong>鼠标右键</strong>：放置方块/使用道具</li>
+                        <li><strong>数字键1-9</strong>：切换快捷栏物品</li>
+                        <li><strong>E键</strong>：打开背包/ inventory</li>
+                        <li><strong>R键</strong>：快速切换手持物品</li>
+                    </ul>
+                </div>
+
+                <div class="control-group">
+                    <h2>其他常用操作</h2>
+                    <ul class="control-list">
+                        <li><strong>ESC键</strong>：打开设置菜单/暂停游戏</li>
+                        <li><strong>H键</strong>：打开装备栏</li>
+                        <li><strong>J键</strong>：打开任务日志</li>
+                        <li><strong>F键</strong>：交互（打开箱子、门等）</li>
+                        <li><strong>Alt键</strong>：显示物品名称</li>
+                    </ul>
+                </div>
+
+                <div class="tips">
+                    <h3>新手小贴士</h3>
+                    <p>1. 挖掘时按住鼠标左键并移动鼠标，可以连续挖掘一片区域</p>
+                    <p>2. 快捷栏可以通过点击背包中的物品快速放置</p>
+                    <p>3. 初期尽量不要在夜晚远离出生点，先收集足够的木材和石头</p>
+                    <p>4. 按ESC可以调整控制键位，根据自己的习惯修改更顺手哦！</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

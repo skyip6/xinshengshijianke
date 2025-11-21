@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>泰拉瑞亚新手教程 - 主页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Comic Sans MS', 'Microsoft YaHei', sans-serif;
+        }
+        body {
+            background: url("images/background.jpg") no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+        }
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .logo {
+            width: 200px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        h1 {
+            font-size: 3.5em;
+            color: #ffd700;
+            text-shadow: 0 0 10px #ff6b6b;
+            margin-bottom: 10px;
+        }
+        .intro {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            text-align: center;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .nav-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        .card {
+            background: linear-gradient(135deg, #2c3e50, #4ca1af);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid #ffd700;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(255, 215, 0, 0.4);
+            background: linear-gradient(135deg, #3498db, #e74c3c);
+        }
+        .card-img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 20px;
+        }
+        .card h2 {
+            font-size: 1.8em;
+            color: #ffd700;
+            margin-bottom: 15px;
+        }
+        .card p {
+            font-size: 1em;
+            margin-bottom: 25px;
+            color: #ecf0f1;
+        }
+        .btn {
+            display: inline-block;
+            background: #ff6b6b;
+            color: #fff;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 1.1em;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: 2px solid #fff;
+        }
+        .btn:hover {
+            background: #ffd700;
+            color: #2c3e50;
+            transform: scale(1.05);
+        }
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            font-size: 1em;
+            color: #bdc3c7;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="images/logo.png" alt="泰拉瑞亚Logo" class="logo">
+            <h1>泰拉瑞亚新手入门指南</h1>
+            <p class="intro">探索无限可能的像素世界！从新手到大师，这里有你需要的所有攻略、技巧和知识，让你轻松玩转泰拉瑞亚的奇妙冒险～</p>
+        </header>
+
+        <div class="nav-cards">
+            <!-- 基础操作卡片 -->
+            <div class="card">
+                <img src="images/icon/pickaxe.png" alt="基础操作" class="card-img">
+                <h2>基础操作</h2>
+                <p>掌握移动、挖掘、建造、战斗的核心操作，快速上手游戏界面和控制方式</p>
+                <a href="basic/index.html" class="btn">开始学习</a>
+            </div>
+
+            <!-- 生存指南卡片 -->
+            <div class="card">
+                <img src="images/icon/heart.png" alt="生存指南" class="card-img">
+                <h2>生存指南</h2>
+                <p>了解日夜循环、资源收集、饥饿系统，教你安全度过新手期的第一个夜晚</p>
+                <a href="survival/index.html" class="btn">生存技巧</a>
+            </div>
+
+            <!-- 合成系统卡片 -->
+            <div class="card">
+                <img src="images/icon/sword.png" alt="合成系统" class="card-img">
+                <h2>合成系统</h2>
+                <p>详解工作台、熔炉、砧等合成工具，掌握装备、道具、建筑材料的合成方法</p>
+                <a href="crafting/index.html" class="btn">合成攻略</a>
+            </div>
+
+            <!-- BOSS攻略卡片 -->
+            <div class="card">
+                <img src="images/icon/star.png" alt="BOSS攻略" class="card-img">
+                <h2>BOSS攻略</h2>
+                <p>新手友好的BOSS挑战顺序，详细的准备工作和战斗技巧，轻松击败强敌</p>
+                <a href="boss/index.html" class="btn">挑战BOSS</a>
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2024 泰拉瑞亚新手教程 | 祝各位冒险家游戏愉快！</p>
+        </footer>
+    </div>
+</body>
+</html>
+<!-- 在nav-cards容器中新增FAQ卡片 -->
+<div class="card">
+    <img src="images/icon/question.png" alt="常见问题" class="card-img">
+    <h2>常见问题</h2>
+    <p>解答新手在游戏中遇到的安装、生存、合成、BOSS挑战等各类疑问</p>
+    <a href="faq/index.html" class="btn">查看解答</a>
+</div>

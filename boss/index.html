@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOSS攻略 - 泰拉瑞亚新手教程</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Comic Sans MS', 'Microsoft YaHei', sans-serif;
+        }
+        body {
+            background: #2d3436;
+            color: #fff;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: rgba(0, 0, 0, 0.85);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+            border-bottom: 2px solid #ffd700;
+            padding-bottom: 20px;
+        }
+        .back-btn {
+            background: #e67e22;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            margin-right: 30px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        .back-btn:hover {
+            background: #d35400;
+            transform: scale(1.05);
+        }
+        h1 {
+            font-size: 2.5em;
+            color: #ffd700;
+            text-shadow: 0 0 10px #ffd700;
+        }
+        .boss-intro {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .boss-intro p {
+            font-size: 1.2em;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
+            color: #ecf0f1;
+        }
+        .boss-order {
+            margin-bottom: 60px;
+        }
+        .boss-order h2 {
+            font-size: 2em;
+            color: #ff6b6b;
+            margin-bottom: 30px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .boss-order h2:before, .boss-order h2:after {
+            content: "⚔️";
+            margin: 0 15px;
+        }
+
+        /* BOSS卡片样式 */
+        .boss-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+        .boss-card {
+            background: linear-gradient(135deg, #34495e, #2c3e50);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 3px solid #ffd700;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease;
+        }
+        .boss-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(255, 215, 0, 0.2);
+        }
+        .boss-header {
+            background: #e67e22;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .boss-rank {
+            background: #fff;
+            color: #e67e22;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+        .boss-header h3 {
+            font-size: 2em;
+            color: #fff;
+            text-shadow: 0 0 5px #000;
+        }
+        .boss-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            padding: 30px;
+        }
+        .boss-img {
+            flex: 1;
+            min-width: 250px;
+        }
+        .boss-img img {
+            width: 100%;
+            border-radius: 15px;
+            border: 2px solid #ffd700;
+        }
+        .boss-details {
+            flex: 2;
+            min-width: 300px;
+        }
+        .detail-section {
+            margin-bottom: 20px;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 4px solid #ffd700;
+        }
+        .detail-section h4 {
+            font-size: 1.4em;
+            color: #ffd700;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .detail-section h4:before {
+            content: "📌";
+            margin-right: 10px;
+        }
+        .detail-section p, .detail-section ul {
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+        .detail-section ul {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+        .detail-section li {
+            margin-bottom: 8px;
+            position: relative;
+        }
+        .detail-section li:before {
+            content: "→";
+            color: #ff6b6b;
+            position: absolute;
+            left: -20px;
+        }
+
+        /* 战斗技巧提示 */
+        .fight-tips {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            border: 2px solid #ffd700;
+            margin-top: 20px;
+        }
+        .fight-tips h3 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+        }
+        .fight-tips h3:before {
+            content: "💥";
+            margin-right: 10px;
+        }
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        .tip-item {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 15px;
+            border-radius: 10px;
+        }
+        .tip-item h4 {
+            color: #ffd700;
+            margin-bottom: 8px;
+            font-size: 1.2em;
+        }
+        .tip-item p {
+            font-size: 1em;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="../index.html" class="back-btn">← 返回主页</a>
+            <h1>新手BOSS攻略：从弱到强挑战顺序</h1>
+        </div>
+
+        <div class="boss-intro">
+            <p>泰拉瑞亚的BOSS是游戏的核心乐趣之一！新手建议按照以下顺序挑战BOSS，逐步提升装备和实力。每个BOSS都有独特的攻击方式和掉落物，击败它们能解锁新的游戏内容和更强的装备～</p>
+        </div>
+
+        <div class="boss-order">
+            <h2>新手BOSS挑战顺序</h2>
+
+            <div class="boss-cards">
+                <!-- 1. 史莱姆王 -->
+                <div class="boss-card">
+                    <div class="boss-header">
+                        <div class="boss-rank">1</div>
+                        <h3>史莱姆王（King Slime）</h3>
+                    </div>
+                    <div class="boss-content">
+                        <div class="boss-img">
+                            <img src="../images/boss/king-slime.jpg" alt="史莱姆王">
+                        </div>
+                        <div class="boss-details">
+                            <div class="detail-section">
+                                <h4>召唤方式</h4>
+                                <p>1. 在夜晚（7:30 PM - 4:30 AM）使用「史莱姆王冠」召唤（合成：10个凝胶 + 1个金锭/铂锭，工作台旁合成）</p>
+                                <p>2. 当玩家生命值≥200且防御≥10时，有几率在白天自动生成</p>
+                            </div>
+                            <div class="detail-section">
+                                <h4>战斗难度：⭐（最简单）</h4>
+                                <ul>
+                                    <li>攻击方式：跳跃碾压（会弹起并砸向玩家）、召唤小史莱姆</li>
+                                    <li>弱点：移动速度慢，攻击规律容易预判</li>
+                                </ul>
+                            </div>
+                            <div class="detail-section">
+                                <h4>准备工作</h4>
+                                <ul>
+                                    <li>装备：铁剑/铅剑 + 铁盔甲/铅盔甲（防御≥10）</li>
+                                    <li>道具：5-10个火把（照明）、1-2个生命水晶（提升生命值到200+）</li>
+                                    <li>场地：在平坦的地面搭建3-5层平台（方便走位躲避）</li>
+                                </ul>
+                            </div>
+                            <div class="detail-section">
+                                <h4>掉落物（新手必备）</h4>
+                                <ul>
+                                    <li>史莱姆王面具（装饰）</li>
+                                    <li>史莱姆钩爪（移动工具，可钩住方块快速移动）</li>
+                                    <li>凝胶（大量，用于制作火把和炸弹）</li>
+                                    <li>金锭/铂锭（随机掉落）</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. 克苏鲁之眼 -->
+                <div class="boss-card">
+                    <div class="boss-header">
+                        <div class="boss-rank">2</div>
+                        <h3>克苏鲁之眼（Eye of Cthulhu）</h3>
+                    </div>
+                    <div class="boss-content">
+                        <div class="boss-img">
+                            <img src="../images/boss/eye-of-cthulhu.jpg" alt="克苏鲁之眼">
+                        </div>
+                        <div class="boss-details">
+                            <div class="detail-section">
+                                <h4>召唤方式</h4>
+                                <p>1. 在夜晚使用「可疑的眼球」召唤（合成：6个晶状体，晶状体通过击杀恶魔眼获得）</p>
+                                <p>2. 当玩家生命值≥200且拥有至少10点防御时，夜晚有20%几率自动生成并攻击玩家</p>
+                            </div>
+                            <div class="detail-section">
+                                <h4>战斗难度：⭐⭐（简单）</h4>
+                                <ul>
+                                    <li>第一阶段：快速冲向玩家（可通过走位躲避）</li>
+                                    <li>第二阶段：生命值低于50%后，会分裂出2个小眼球，攻击速度加快</li>
+                                    <li>弱点：攻击前会有明显的瞄准动作，提前走位即可躲避</li>
+                                </ul>
+                            </div>
+                            <div class="detail-section">
+                                <h4>准备工作</h4>
+                                <ul>
+                                    <li>装备：铁剑/铅剑（攻击力≥8） + 铁盔甲（防御≥12）</li>
+                                    <li>道具：10个火把、3-5个治疗药水（恢复50点生命值）、生命水晶（生命值≥300）</li>
+                                    <li>场地：搭建10层以上的长平台（长度≥50格，方便横向走位）</li>
+                                </ul>
+                            </div>
+                            <div class="detail-section">
+                                <h4>掉落物（核心装备）</h4>
+                                <ul>
+                                    <li>克苏鲁之眼面具（装饰）</li>
+                                    <li>魔金矿石/血腥矿石（用于制作更高级的武器和盔甲）</li>
+                                    <li>晶状体（大量）</li>
+                                    <li>神圣锭（少量，后期合成高级装备）</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. 世界吞噬者/克苏鲁之脑 -->
+                <div class="boss-card">
+                    <div class="boss-header">
+                        <div class="boss-rank">3</div>
+                        <h3>世界吞噬者/克苏鲁之脑（二选一）</h3>
+                    </div>
+                    <div class="boss-content">
+                        <div class="boss-img">
+                            <img src="../images/boss/eater-of-worlds.jpg" alt="世界吞噬者">
+                        </div>
+                        <div class="boss-details">
+                            <div class="detail-section">
+                                <h4>召唤方式（二选一，根据世界类型）</h4>
+                                <p><strong>腐败世界（黑色地形）- 世界吞噬者：</strong></p>
+                                <ul>
+                                    <li>使用「蠕虫诱饵」召唤（合成：30个腐败粉末 + 15个 vertebrae，vertebrae通过击杀腐败生物获得）</li>
+                                    <li>破坏腐败之地的「暗影珠」（用锤子敲击），有几率召唤</li>
+                                </ul>
+                                <p><strong>血腥世界（红色地形）- 克苏鲁之脑：</strong></p>
+                                <ul>
+                                    <li>使用「血腥脊椎」召唤（合成：15个 vertebrae，击杀血腥生物获得）</li>
+                                    <li>破坏血腥之地的「心脏」（用锤子敲击），有几率召唤</li>
+                                </ul>
+                            </div>
+                            <div class="detail-section">
+                                <h4>战斗难度：⭐⭐⭐（中等）</h4>
+                                <ul>
+                                    <li>世界吞噬者：长条形蠕虫，分为多个身体段，攻击方式为冲撞，击杀头部后身体段会单独攻击</li>
+                                    <li>克苏鲁之脑：会召唤小眼球，攻击方式为冲撞和远程激光，生命值低于50%后攻击速度加快</li>
+                                </ul>
+                            </div>
+                            <div class="detail-section">
+                                <h4>准备工作</h4>
+                                <ul>
+                                    <li>装备：魔金剑/血腥剑（攻击力≥12） + 魔金盔甲/血腥盔甲（防御≥18）</li>
+                                    <li>道具：10个治疗药水、5个魔力药水（如有魔法武器）、防护药水（增加防御）</li>
+                                    <li>场地：搭建多层平台（世界吞噬者适合纵向平台，克苏鲁之脑适合横向平台）</li>
+                                </ul>
+                            </div>
+                            <div class="detail-section">
+                                <h4>掉落物（关键进阶装备）</h4>
+                                <ul>
+                                    <li>对应BOSS面具（装饰）</li>
+                                    <li>大量魔金矿石/血腥矿石（制作高级装备）</li>
+                                    <li>暗影鳞片/组织样本（合成暗影盔甲/血腥盔甲）</li>
+                                    <li>恶魔之翼/天使之翼（概率掉落，飞行工具！）</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 战斗技巧提示 -->
+        <div class="fight-tips">
+            <h3>新手BOSS战斗通用技巧</h3>
+            <div class="tips-grid">
+                <div class="tip-item">
+                    <h4>场地准备是关键</h4>
+                    <p>提前搭建多层平台，增加移动空间，避免被BOSS困住。平台之间的距离以能轻松跳跃为准（约2-3格）。</p>
+                </div>
+                <div class="tip-item">
+                    <h4>药水不要省</h4>
+                    <p>战斗前喝上防御药水、敏捷药水、力量药水，能大幅提升生存能力和输出效率。新手可先制作基础治疗药水（蘑菇+凝胶）。</p>
+                </div>
+                <div class="tip-item">
+                    <h4>不要硬拼，学会走位</h4>
+                    <p>大部分BOSS的攻击都有规律，观察其攻击前的动作，提前走位躲避。保持和BOSS的安全距离，避免被连续攻击。</p>
+                </div>
+                <div class="tip-item">
+                    <h4>装备优先防御</h4>
+                    <p>新手期防御比攻击力更重要，先凑齐一套完整的金属盔甲，再考虑升级武器。生命水晶尽量早点使用，提升生命值上限。</p>
+                </div>
+                <div class="tip-item">
+                    <h4>失败不可怕</h4>
+                    <p>第一次挑战失败很正常，记住BOSS的攻击规律，回家补充装备和药水后重新挑战。每一次失败都是经验的积累！</p>
+                </div>
+                <div class="tip-item">
+                    <h4>召唤BOSS的最佳时间</h4>
+                    <p>建议在夜晚刚开始时（7:30 PM左右）召唤BOSS，此时有充足的时间战斗，避免战斗到天亮后BOSS消失（部分BOSS白天会逃跑）。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
