@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>常见问题 - 泰拉瑞亚新手教程</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Comic Sans MS', 'Microsoft YaHei', sans-serif;
+        }
+        body {
+            background: #4a044a;
+            color: #fff;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: rgba(0, 0, 0, 0.85);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 0 20px rgba(255, 0, 255, 0.3);
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+            border-bottom: 2px solid #ff00ff;
+            padding-bottom: 20px;
+        }
+        .back-btn {
+            background: #9b59b6;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            margin-right: 30px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        .back-btn:hover {
+            background: #8e44ad;
+            transform: scale(1.05);
+        }
+        h1 {
+            font-size: 2.5em;
+            color: #ff00ff;
+            text-shadow: 0 0 10px #ff00ff;
+        }
+        .faq-cover {
+            width: 100%;
+            border-radius: 15px;
+            border: 3px solid #ff00ff;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        }
+        .faq-intro {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 1.2em;
+            line-height: 1.8;
+            color: #ecf0f1;
+        }
+        .faq-categories {
+            margin-bottom: 60px;
+        }
+        .category-title {
+            font-size: 1.8em;
+            color: #ffd700;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            border-left: 5px solid #ffd700;
+            padding-left: 15px;
+        }
+        .category-title:before {
+            content: "❓";
+            margin-right: 10px;
+        }
+        .faq-list {
+            list-style-type: none;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .faq-item {
+            background: linear-gradient(135deg, #34495e, #2c3e50);
+            border-radius: 15px;
+            overflow: hidden;
+            border: 2px solid #ff00ff;
+            transition: all 0.3s ease;
+        }
+        .faq-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(255, 0, 255, 0.2);
+        }
+        .faq-question {
+            background: #9b59b6;
+            padding: 18px 25px;
+            font-size: 1.2em;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .faq-question:after {
+            content: "➕";
+            transition: transform 0.3s ease;
+        }
+        .faq-item.active .faq-question:after {
+            content: "➖";
+            transform: rotate(180deg);
+        }
+        .faq-answer {
+            padding: 0 25px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease, padding 0.5s ease;
+            background: rgba(0, 0, 0, 0.2);
+        }
+        .faq-item.active .faq-answer {
+            padding: 25px;
+            max-height: 500px;
+        }
+        .faq-answer p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #ecf0f1;
+        }
+        .faq-answer ul {
+            list-style-type: none;
+            margin-top: 15px;
+            padding-left: 20px;
+        }
+        .faq-answer li {
+            margin-bottom: 10px;
+            position: relative;
+        }
+        .faq-answer li:before {
+            content: "✅";
+            position: absolute;
+            left: -20px;
+            top: 2px;
+        }
+        .tips-box {
+            background: linear-gradient(135deg, #f39c12, #e67e22);
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        .tips-box h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+        }
+        .tips-box h3:before {
+            content: "💡";
+            margin-right: 10px;
+        }
+        .tips-box p {
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="../index.html" class="back-btn">← 返回主页</a>
+            <h1>新手常见问题（FAQ）</h1>
+        </div>
+
+        <img src="../images/faq-cover.jpg" alt="泰拉瑞亚常见问题" class="faq-cover">
+
+        <div class="faq-intro">
+            <p>收集了新手在游戏中最常遇到的疑问，涵盖安装、操作、生存、合成等多个方面，快速解决你的困惑，让冒险更顺畅！</p>
+        </div>
+
+        <!-- 安装与启动问题 -->
+        <div class="faq-categories">
+            <h2 class="category-title">安装与启动问题</h2>
+            <ul class="faq-list">
+                <li class="faq-item">
+                    <div class="faq-question">游戏安装后无法启动怎么办？</div>
+                    <div class="faq-answer">
+                        <p>常见解决方法：</p>
+                        <ul>
+                            <li>检查电脑是否满足最低配置（泰拉瑞亚配置要求较低，一般电脑都能运行）</li>
+                            <li>验证游戏文件完整性（Steam平台：右键游戏→属性→本地文件→验证完整性）</li>
+                            <li>安装最新的DirectX和.NET Framework（游戏文件夹中通常有相关安装包）</li>
+                            <li>关闭杀毒软件（部分杀毒软件会误报游戏文件为病毒）</li>
+                            <li>以管理员身份运行游戏</li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="faq-item">
+                    <div class="faq-question">如何设置中文？</div>
+                    <div class="faq-answer">
+                        <p>步骤如下：</p>
+                        <ul>
+                            <li>打开游戏，进入主菜单</li>
+                            <li>点击「Settings」（设置）→ 选择「Language」（语言）</li>
+                            <li>在语言列表中找到「Chinese（Simplified）」（简体中文）</li>
+                            <li>点击确认，游戏会自动切换语言，无需重启</li>
+                            <li>如果没有中文选项，可能是游戏版本过旧，建议更新到最新版本</li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="faq-item">
+                    <div class="faq-question">游戏卡顿、掉帧怎么解决？</div>
+                    <div class="faq-answer">
+                        <p>优化方法：</p>
+                        <ul>
+                            <li>降低游戏分辨率（设置→视频→分辨率，选择适合自己电脑的尺寸）</li>
+                            <li>关闭特效（设置→视频→关闭「背景特效」「粒子效果」）</li>
+                            <li>减少游戏中的实体数量（比如清理过多的NPC、怪物尸体）</li>
+                            <li>关闭后台占用资源的软件（如浏览器、视频播放器等）</li>
+                            <li>如果是笔记本电脑，切换到独立显卡运行游戏</li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- 生存与操作问题 -->
+        <div class="faq-categories">
+            <h2 class="category-title">生存与操作问题</h2>
+            <ul class="faq-list">
+                <li class="faq-item">
+                    <div class="faq-question">第一个夜晚总是死怎么办？</div>
+                    <div class="faq-answer">
+                        <p>新手必看生存技巧：</p>
+                        <ul>
+                            <li>白天优先收集木材和石头，快速搭建封闭庇护所（必须用墙铺满背景，防止怪物穿墙）</li>
+                            <li>庇护所留一个木门，夜晚关闭门，通过门缝击杀靠近的怪物（僵尸会敲门，不要开门！）</li>
+                            <li>合成足够的火把，照亮庇护所内部（黑暗中会刷新怪物）</li>
+                            <li>不要在夜晚外出探索，即使有武器也容易被多个怪物围攻</li>
+                            <li>如果庇护所没建好，可暂时挖一个3x3的坑，跳进去后用方块封住顶部，等待天亮</li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="faq-item">
+                    <div class="faq-question">找不到铁矿/铅矿怎么办？</div>
+                    <div class="faq-answer">
+                        <p>寻找方法：</p>
+                        <ul>
+                            <li>铁矿/铅矿是等价资源（世界随机生成一种），颜色分别为红色（铁）和灰色（铅）</li>
+                            <li>需要用石镐以上的工具才能挖掘（木镐挖不动）</li>
+                            <li>生成位置：地下10-50层（地表往下挖，穿过泥土层后就是石头层，铁矿通常在石头层中）</li>
+                            <li>挖矿技巧：采用「阶梯式挖矿」（往下挖2格，往左/右挖1格，再往下挖2格），既安全又高效</li>
+                            <li>如果实在找不到，可在地表寻找矿石露头（部分铁矿会暴露在地面）</li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="faq-item">
+                    <div class="faq-question">NPC不入住怎么办？</div>
+                    <div class="faq-answer">
+                        <p>入住条件与解决方法：</p>
+                        <ul>
+                            <li>住房要求：至少6x8的封闭空间，有门、桌子、椅子、火把（满足「舒适的住房」判定）</li>
+                            <li>玩家条件：生命值≥100，拥有至少一间合格住房</li>
+                            <li>NPC条件：对应NPC已解锁（比如向导一开始就有，商人需要玩家拥有50银币）</li>
+                            <li>检查住房是否被占用（每个NPC需要独立住房），可通过「住房菜单」（右下角图标）查看</li>
+                            <li>如果住房合格但NPC仍不入住，可远离住房一段时间（比如探索其他区域），回来后NPC可能已入住</li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="faq-item">
+                    <div class="faq-question">如何快速恢复生命值？</div>
+                    <div class="faq-answer">
+                        <p>恢复方法：</p>
+                        <ul>
+                            <li>基础方法：站着不动，生命值会自动缓慢恢复（需要处于安全环境，不被怪物攻击）</li>
+                            <li>使用道具：合成治疗药水（1个蘑菇+1个凝胶+1个空瓶，熔炉旁合成），使用后瞬间恢复50点生命值</li>
+                            <li>生命水晶：找到后直接使用，永久增加20点生命值上限（最多增加到400点）</li>
+                            <li>篝火：在庇护所内放置篝火（10个木材+5个凝胶，工作台旁合成），靠近篝火可加快生命值恢复速度</li>
+                            <li>红心灯笼：后期合成，挂在墙上，效果比篝火更好</li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- 合成与BOSS问题 -->
+        <div class="faq-categories">
+            <h2 class="category-title">合成与BOSS问题</h2>
+            <ul class="faq-list">
+                <li class="faq-item">
+                    <div class="faq-question">为什么无法合成某个物品？</div>
+                    <div class="faq-answer">
+                        <p>常见原因：</p>
+                        <ul>
+                            <li>缺少合成工具：比如合成铁剑需要靠近铁砧，合成铁锭需要靠近熔炉</li>
+                            <li>材料不足：部分物品需要特定数量的材料，可在背包制作栏查看所需材料</li>
+                            <li>未解锁配方：部分高级物品需要先解锁前置物品（比如要合成暗影盔甲，需先击败世界吞噬者）</li>
+                            <li>位置不对：部分物品需要在特定环境合成（比如在神圣之地、腐败之地）</li>
+                            <li>背包空间不足：合成后的物品需要有空的背包格子才能成功</li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="faq-item">
+                    <div class="faq-question">BOSS召唤后消失了怎么办？</div>
+                    <div class="faq-answer">
+                        <p>解决方法与注意事项：</p>
+                        <ul>
+                            <li>BOSS有活动范围限制，召唤后如果玩家远离召唤点（超过200格），BOSS会自动消失</li>
+                            <li>部分BOSS（如克苏鲁之眼）在天亮后会自动逃跑，建议在夜晚刚开始时召唤</li>
+                            <li>如果BOSS消失，召唤道具不会返还，需要重新制作召唤道具</li>
+                            <li>避免在地形复杂的区域召唤BOSS（比如地下、丛林），容易导致BOSS卡地形消失</li>
+                            <li>召唤BOSS前，先清理召唤点周围的怪物，避免被干扰</li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="faq-item">
+                    <div class="faq-question">击败BOSS后没有掉落物？</div>
+                    <div class="faq-answer">
+                        <p>可能原因：</p>
+                        <ul>
+                            <li>掉落物有拾取范围，BOSS死亡后如果玩家距离太远（超过50格），掉落物会消失</li>
+                            <li>部分BOSS的掉落物是概率性的，不是100%掉落（比如恶魔之翼），需要多次击败</li>
+                            <li>掉落物可能掉落在地形缝隙中（比如地下洞穴、水中），仔细寻找即可</li>
+                            <li>如果是多人游戏，其他玩家可能已经捡走了掉落物</li>
+                            <li>极少数情况下是游戏BUG，可退出游戏重新进入，再次挑战</li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="tips-box">
+            <h3>更多问题解决渠道</h3>
+            <p>如果以上问题没有解决你的困惑，可以通过以下方式获取帮助：</p>
+            <p>1. 泰拉瑞亚官方论坛：https://forums.terraria.org/（英文）</p>
+            <p>2. 泰拉瑞亚中文维基：https://terraria.fandom.com/zh/wiki/泰拉瑞亚维基（最全面的中文资料）</p>
+            <p>3. 游戏内配方书：按ESC→点击「配方书」，可查看所有物品的合成路径和条件</p>
+            <p>4. 视频教程：B站搜索「泰拉瑞亚新手教程」，有大量详细的实操视频</p>
+        </div>
+    </div>
+
+    <script>
+        // FAQ折叠展开功能
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                item.classList.toggle('active');
+            });
+        });
+
+        // 默认展开第一个问题
+        faqItems[0].classList.add('active');
+    </script>
+</body>
+</html>

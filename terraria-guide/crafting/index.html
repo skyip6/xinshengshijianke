@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>合成系统 - 泰拉瑞亚新手教程</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Comic Sans MS', 'Microsoft YaHei', sans-serif;
+        }
+        body {
+            background: #1a2a6c;
+            color: #fff;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: rgba(0, 0, 0, 0.85);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+            border-bottom: 2px solid #00ffff;
+            padding-bottom: 20px;
+        }
+        .back-btn {
+            background: #3498db;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            margin-right: 30px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        .back-btn:hover {
+            background: #2980b9;
+            transform: scale(1.05);
+        }
+        h1 {
+            font-size: 2.5em;
+            color: #00ffff;
+            text-shadow: 0 0 10px #00ffff;
+        }
+        .crafting-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        .crafting-img {
+            flex: 1;
+            min-width: 300px;
+        }
+        .crafting-img img {
+            width: 100%;
+            border-radius: 15px;
+            border: 3px solid #00ffff;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        }
+        .crafting-intro {
+            flex: 1;
+            min-width: 300px;
+        }
+        h2 {
+            font-size: 2em;
+            color: #ffd700;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+        h2:before {
+            content: "🔧";
+            margin-right: 10px;
+        }
+        .crafting-intro p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+        .key-point {
+            background: rgba(0, 123, 255, 0.2);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 4px solid #00ffff;
+        }
+        .key-point h3 {
+            color: #00ffff;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        /* 合成工具部分 */
+        .crafting-tools {
+            margin-bottom: 50px;
+        }
+        .tool-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+        }
+        .tool-card {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            border: 2px solid #00ffff;
+            transition: all 0.3s ease;
+        }
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 255, 255, 0.2);
+            background: linear-gradient(135deg, #3498db, #2980b9);
+        }
+        .tool-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+        .tool-card h3 {
+            color: #ffd700;
+            margin-bottom: 10px;
+            font-size: 1.5em;
+        }
+        .tool-card p {
+            font-size: 1em;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+        .tool-recipe {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 0.9em;
+            color: #ecf0f1;
+        }
+
+        /* 新手必备合成配方 */
+        .basic-recipes {
+            margin-bottom: 40px;
+        }
+        .recipe-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        .recipe-table th, .recipe-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 2px solid #00ffff;
+        }
+        .recipe-table th {
+            background: #34495e;
+            color: #ffd700;
+            font-size: 1.1em;
+        }
+        .recipe-table td {
+            background: rgba(0, 0, 0, 0.2);
+            font-size: 1em;
+        }
+        .recipe-table tr:hover td {
+            background: rgba(0, 255, 255, 0.1);
+        }
+        .recipe-tag {
+            display: inline-block;
+            background: #e74c3c;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            margin-right: 5px;
+        }
+
+        /* 合成技巧提示 */
+        .crafting-tips {
+            background: linear-gradient(135deg, #9b59b6, #8e44ad);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            border: 2px solid #ffd700;
+        }
+        .crafting-tips h3 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+        }
+        .crafting-tips h3:before {
+            content: "💡";
+            margin-right: 10px;
+        }
+        .tips-list {
+            list-style-type: none;
+        }
+        .tips-list li {
+            font-size: 1.1em;
+            margin-bottom: 12px;
+            padding-left: 30px;
+            position: relative;
+            line-height: 1.6;
+        }
+        .tips-list li:before {
+            content: "✓";
+            color: #ffd700;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="../index.html" class="back-btn">← 返回主页</a>
+            <h1>合成系统全解析：从基础到进阶</h1>
+        </div>
+
+        <div class="crafting-content">
+            <div class="crafting-img">
+                <img src="../images/crafting-system.jpg" alt="泰拉瑞亚合成界面">
+            </div>
+            <div class="crafting-intro">
+                <h2>合成系统基础原理</h2>
+                <p>泰拉瑞亚的核心玩法之一就是「合成」——通过收集各种资源，在特定的合成工具旁制作装备、道具、建筑材料等。合成系统分为两种形式：</p>
+                
+                <div class="key-point">
+                    <h3>1. 基础合成（无需工具）</h3>
+                    <p>部分简单物品可直接在背包的制作栏合成（如工作台、木镐、木剑等），只要背包中有足够的原材料，即可自动解锁配方。</p>
+                </div>
+                
+                <div class="key-point">
+                    <h3>2. 工具合成（需要特定工具）</h3>
+                    <p>大部分进阶物品需要在特定合成工具旁才能合成（如熔炉、铁砧、织布机等）。靠近这些工具后，背包制作栏会自动解锁对应的配方。</p>
+                </div>
+                
+                <p>新手需要优先解锁基础合成工具，逐步解锁更高级的配方，才能不断提升自己的装备和生存能力。</p>
+            </div>
+        </div>
+
+        <!-- 核心合成工具 -->
+        <div class="crafting-tools">
+            <h2>新手必备合成工具</h2>
+            <p>以下是初期必须解锁的合成工具，按优先级排序：</p>
+            
+            <div class="tool-cards">
+                <!-- 工作台 -->
+                <div class="tool-card">
+                    <div class="tool-icon">🪑</div>
+                    <h3>工作台</h3>
+                    <p>最基础的合成工具，解锁大部分初期物品配方</p>
+                    <div class="tool-recipe">合成配方：10个木材（背包直接合成）</div>
+                </div>
+                
+                <!-- 熔炉 -->
+                <div class="tool-card">
+                    <div class="tool-icon">🔥</div>
+                    <h3>熔炉</h3>
+                    <p>用于将矿石熔炼成锭（铁锭、金锭等），必备进阶工具</p>
+                    <div class="tool-recipe">合成配方：20个石块 + 3个火把（工作台旁）</div>
+                </div>
+                
+                <!-- 铁砧 -->
+                <div class="tool-card">
+                    <div class="tool-icon">⚒️</div>
+                    <h3>铁砧</h3>
+                    <p>用于制作金属装备、高级工具和武器</p>
+                    <div class="tool-recipe">合成配方：5个铁锭（熔炉旁合成铁锭）</div>
+                </div>
+                
+                <!-- 织布机 -->
+                <div class="tool-card">
+                    <div class="tool-icon">🧵</div>
+                    <h3>织布机</h3>
+                    <p>用于将棉花制作成丝绸，制作防具和家具</p>
+                    <div class="tool-recipe">合成配方：12个木材 + 3个蜘蛛网（工作台旁）</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 新手必备合成配方 -->
+        <div class="basic-recipes">
+            <h2>新手必备合成配方</h2>
+            <p>掌握以下核心配方，轻松度过新手期：</p>
+            
+            <table class="recipe-table">
+                <tr>
+                    <th>物品名称</th>
+                    <th>合成配方</th>
+                    <th>所需工具</th>
+                    <th>用途</th>
+                </tr>
+                <tr>
+                    <td>木剑</td>
+                    <td>7个木材</td>
+                    <td>无（背包合成）</td>
+                    <td>初期自卫武器，击杀史莱姆等弱怪</td>
+                </tr>
+                <tr>
+                    <td>木镐</td>
+                    <td>10个木材</td>
+                    <td>无（背包合成）</td>
+                    <td>挖掘石头、泥土等基础方块</td>
+                </tr>
+                <tr>
+                    <td>火把</td>
+                    <td>1个木材 + 1个凝胶</td>
+                    <td>无（背包合成）</td>
+                    <td>照明，防止黑暗中刷怪</td>
+                </tr>
+                <tr>
+                    <td>木门</td>
+                    <td>6个木材</td>
+                    <td>工作台</td>
+                    <td>庇护所入口，阻挡怪物进入</td>
+                </tr>
+                <tr>
+                    <td>铁剑</td>
+                    <td>8个铁锭</td>
+                    <td>铁砧</td>
+                    <td>中期强力武器，伤害是木剑的2倍</td>
+                </tr>
+                <tr>
+                    <td>铁镐</td>
+                    <td>10个铁锭</td>
+                    <td>铁砧</td>
+                    <td>挖掘铁矿、银矿等高级矿石</td>
+                </tr>
+                <tr>
+                    <td>生命水晶</td>
+                    <td>无法合成（地下探索获得）</td>
+                    <td>无</td>
+                    <td>使用后永久增加20点生命值上限</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 合成技巧提示 -->
+        <div class="crafting-tips">
+            <h3>合成系统新手技巧</h3>
+            <ul class="tips-list">
+                <li>靠近多个合成工具时，会同时解锁所有对应配方，建议将常用合成工具（工作台、熔炉、铁砧）放在一起，组成「合成区」</li>
+                <li>背包中点击「制作」标签，可查看当前已解锁的所有配方，点击配方可自动放入所需材料（前提是材料足够）</li>
+                <li>部分物品需要「前置合成」，例如要制作铁剑，必须先制作铁砧，而制作铁砧需要先制作熔炉熔炼铁锭</li>
+                <li>不要浪费稀有资源！新手期优先制作工具和武器，不要过早尝试制作装饰性家具</li>
+                <li>蜘蛛网可以通过击杀蜘蛛获得，或在地下洞穴中收集，是制作织布机和丝绸的重要材料</li>
+                <li>遇到不会合成的物品，可在游戏中按「ESC」→「配方书」查看详细合成路径</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>生存指南 - 泰拉瑞亚新手教程</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Comic Sans MS', 'Microsoft YaHei', sans-serif;
+        }
+        body {
+            background: #2c3e50;
+            color: #fff;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: rgba(0, 0, 0, 0.85);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 0 20px rgba(255, 105, 180, 0.3);
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+            border-bottom: 2px solid #ff69b4;
+            padding-bottom: 20px;
+        }
+        .back-btn {
+            background: #e74c3c;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            margin-right: 30px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        .back-btn:hover {
+            background: #c0392b;
+            transform: scale(1.05);
+        }
+        h1 {
+            font-size: 2.5em;
+            color: #ff69b4;
+            text-shadow: 0 0 10px #ff69b4;
+        }
+        .survival-img {
+            width: 100%;
+            border-radius: 15px;
+            border: 3px solid #ff69b4;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        }
+        .section {
+            margin-bottom: 50px;
+            background: rgba(44, 62, 80, 0.7);
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 5px solid #ff69b4;
+        }
+        h2 {
+            font-size: 2em;
+            color: #ffd700;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+        h2:before {
+            content: "★";
+            margin-right: 10px;
+            color: #ff69b4;
+        }
+        .section p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        .step-list {
+            list-style-type: none;
+            margin-bottom: 25px;
+        }
+        .step-list li {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            position: relative;
+            padding-left: 40px;
+        }
+        .step-list li:before {
+            content: "①②③④⑤⑥"[counter(step)];
+            counter-increment: step;
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #ff69b4;
+            color: #fff;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 25px;
+            font-weight: bold;
+        }
+        .step-list {
+            counter-reset: step;
+        }
+        .danger-tips {
+            background: linear-gradient(135deg, #c0392b, #e74c3c);
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            border: 2px solid #ffd700;
+        }
+        .danger-tips h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+        }
+        .danger-tips h3:before {
+            content: "⚠️";
+            margin-right: 10px;
+        }
+        .resource-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .resource-table th, .resource-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 2px solid #ff69b4;
+        }
+        .resource-table th {
+            background: #34495e;
+            color: #ffd700;
+            font-size: 1.1em;
+        }
+        .resource-table td {
+            background: rgba(0, 0, 0, 0.2);
+            font-size: 1em;
+        }
+        .resource-table tr:hover td {
+            background: rgba(255, 105, 180, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="../index.html" class="back-btn">← 返回主页</a>
+            <h1>新手生存指南：安全度过前7天</h1>
+        </div>
+
+        <img src="../images/survival-guide.jpg" alt="泰拉瑞亚生存场景" class="survival-img">
+
+        <!-- 第一天生存攻略 -->
+        <div class="section">
+            <h2>第一天：开局基础建设</h2>
+            <p>刚进入游戏时，你一无所有但潜力无限！第一天的核心目标是收集基础资源、搭建临时庇护所，为夜晚做准备。</p>
+            
+            <ul class="step-list">
+                <li>出生后立刻用拳头敲击地面的树木，收集至少50个木材（木材是初期最重要的资源）</li>
+                <li>打开背包（E键），在制作栏合成「工作台」（需要10个木材），放置在地面上</li>
+                <li>靠近工作台，合成「木镐」（10木材）和「木剑」（7木材），木镐用于挖掘石头，木剑用于自卫</li>
+                <li>用木镐挖掘石头，收集30-50个石块，合成「木墙」（4木材=4墙），开始搭建庇护所</li>
+                <li>庇护所要求：至少3x3的封闭空间，留一个门口（合成木门需要6木材），用木墙铺满内部背景（防止怪物穿墙）</li>
+                <li>收集火把材料（1木材+1凝胶，凝胶通过击杀史莱姆获得），合成火把并放置在庇护所内照明</li>
+            </ul>
+
+            <div class="danger-tips">
+                <h3>第一天注意事项</h3>
+                <p>1. 史莱姆是初期最常见的怪物，血量低，用木剑正面攻击即可轻松击败</p>
+                <p>2. 不要在夜晚来临前远离庇护所，泰拉瑞亚的夜晚会刷新更强的怪物（僵尸、恶魔眼）</p>
+                <p>3. 凝胶不仅能做火把，还是后期制作炸弹、药剂的重要材料，尽量多收集</p>
+            </div>
+        </div>
+
+        <!-- 资源收集指南 -->
+        <div class="section">
+            <h2>核心资源收集攻略</h2>
+            <p>不同资源有不同的用途，新手需要优先收集以下基础资源，为后续发展打基础：</p>
+            
+            <table class="resource-table">
+                <tr>
+                    <th>资源名称</th>
+                    <th>获取方式</th>
+                    <th>主要用途</th>
+                </tr>
+                <tr>
+                    <td>木材</td>
+                    <td>敲击各种树木（任何工具都能收集，斧类效率更高）</td>
+                    <td>制作工作台、建筑、基础装备、火把</td>
+                </tr>
+                <tr>
+                    <td>石块</td>
+                    <td>用镐类挖掘地面的石头（木镐可挖掘普通石头）</td>
+                    <td>制作熔炉、石墙、基础建筑、石质装备</td>
+                </tr>
+                <tr>
+                    <td>凝胶</td>
+                    <td>击杀史莱姆（所有类型史莱姆都会掉落）</td>
+                    <td>制作火把、炸弹、粘性炸弹、各种药剂</td>
+                </tr>
+                <tr>
+                    <td>铁矿/铅矿</td>
+                    <td>用石镐挖掘地下的铁矿脉（红色/灰色矿石）</td>
+                    <td>制作铁镐、铁剑、铁盔甲（比石质装备更强）</td>
+                </tr>
+                <tr>
+                    <td>生命水晶</td>
+                    <td>地下洞穴中随机生成（粉色水晶状）</td>
+                    <td>使用后永久增加20点生命值上限（最多增加到400点）</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 日夜循环与生存技巧 -->
+        <div class="section">
+            <h2>日夜循环与生存技巧</h2>
+            <p>泰拉瑞亚的一天分为白天（15分钟）、黄昏（2.5分钟）、夜晚（9分钟），不同时段的生存策略不同：</p>
+            
+            <ul class="step-list">
+                <li>白天：安全时段，适合外出收集资源、探索地图、挖掘矿石，怪物强度低且数量少</li>
+                <li>黄昏：过渡时段，天空会逐渐变暗，此时应尽快返回庇护所，或找安全的地方躲避</li>
+                <li>夜晚：危险时段，会刷新僵尸（近战攻击）、恶魔眼（远程攻击）、狼人（满月时出现）等怪物，新手建议待在庇护所内，通过门口缝隙击杀靠近的怪物</li>
+                <li>血月：随机触发的特殊夜晚，怪物数量翻倍、强度提升，还会刷新血月僵尸，新手务必紧闭庇护所，不要外出</li>
+                <li>日食：后期触发的特殊白天，会刷新强力怪物，但掉落物丰富，新手期遇到建议躲起来</li>
+            </ul>
+
+            <div class="danger-tips">
+                <h3>新手生存黄金法则</h3>
+                <p>1. 永远不要在没有装备的情况下深入地下洞穴（地下有更危险的怪物和陷阱）</p>
+                <p>2. 每次探索前务必携带足够的火把（照明+防止刷怪）和木剑/铁剑（自卫）</p>
+                <p>3. 生命水晶是提升生存能力的关键，找到后立刻使用，不要囤积</p>
+                <p>4. 遇到未知的怪物，先观察其攻击方式，不要盲目冲上去硬拼</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
